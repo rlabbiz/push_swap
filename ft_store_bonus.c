@@ -1,16 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_ultis2.c                                 :+:      :+:    :+:   */
+/*   ft_store_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 14:45:58 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 11:22:04 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/03/19 10:25:46 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/03/19 11:21:07 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
+
+int	ft_check_sort(int **nbr, int len)
+{
+	int	i;
+	int	check;
+
+	i = 0;
+	check = 0;
+	while (i < len && i + 1 < len)
+	{
+		if ((*nbr)[i] > (*nbr)[i + 1])
+		{
+			check = 1;
+			break ;
+		}
+		i++;
+	}
+	return (check);
+}
 
 static void	ft_store_small(char **str, int **nbr, int i, int len)
 {
@@ -68,38 +87,17 @@ int	ft_check_content(int a, int b)
 	return (0);
 }
 
-void	ft_sort_array(int *nbr, int len)
+int	ft_get_index(t_list *stack, int value)
 {
-	int	i;
-	int	tmp;
+	t_list	*lst;
+	int		index;
 
-	i = 0;
-	while (i < len && i + 1 != len)
+	index = 0;
+	lst = stack;
+	while (lst != NULL && lst->content != value)
 	{
-		if (nbr[i] > nbr[i + 1])
-		{
-			tmp = nbr[i];
-			nbr[i] = nbr[i + 1];
-			nbr[i + 1] = tmp;
-			ft_sort_array(nbr, len);
-		}
-		i++;
+		lst = lst->next;
+		index++;
 	}
-}
-
-void	ft_push_b(t_list **a, t_list **b, char *str)
-{
-	t_list	*tmp;
-
-	if ((*a) != NULL)
-	{
-		tmp = *a;
-		*a = (*a)->next;
-		ft_lstadd_front(b, tmp);
-	}
-	if (str != NULL)
-	{
-		ft_putstr_fd(str, 1);
-		ft_putchar_fd('\n', 1);
-	}
+	return (index);
 }

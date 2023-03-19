@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   free_stack_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 13:57:08 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/17 19:18:49 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/03/19 11:36:58 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/03/19 11:37:05 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap_bonus.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+void	ft_free_stack(t_list **a, t_list **b)
 {
-	char	*str;
-	int		size;
+	t_list	*tmp;
 
-	if (!s1)
-		s1 = ft_strdup("");
-	size = ft_strlen(s1) + ft_strlen(s2);
-	str = malloc(sizeof(char) * (size + 1));
-	if (!str)
-		return (NULL);
-	ft_memcpy(str, s1, ft_strlen(s1));
-	ft_memcpy(str + ft_strlen(s1), s2, ft_strlen(s2));
-	str[size] = '\0';
-	free(s1);
-	return (str);
+	while ((*a) != NULL)
+	{
+		tmp = (*a)->next;
+		free((*a));
+		(*a) = tmp;
+	}
+	while ((*b) != NULL)
+	{
+		tmp = (*b)->next;
+		free((*b));
+		(*b) = tmp;
+	}
 }

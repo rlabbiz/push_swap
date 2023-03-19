@@ -6,7 +6,7 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:21:17 by rlabbiz           #+#    #+#             */
-/*   Updated: 2022/10/17 13:27:49 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2023/03/17 20:02:14 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 char	*ft_strchr(char *str, int c)
 {
-	char	s;
+	char	*s;
 
-	s = (char )c;
-	while (*str != '\0')
+	s = (char *)str;
+	while (*s)
 	{
-		if (*str == s)
-			return ((char *)str);
-		str++;
+		if (*s == (char)c)
+			return (s);
+		s++;
 	}
-	if (!c)
-		return ((char *)str);
 	return (NULL);
 }

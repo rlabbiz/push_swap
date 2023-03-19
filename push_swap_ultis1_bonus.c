@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_store.c                                         :+:      :+:    :+:   */
+/*   push_swap_ultis1_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 16:10:12 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 09:27:40 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/03/19 10:15:11 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/03/19 10:22:32 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	ft_error(void)
 {
 	ft_putstr_fd("Error\n", 1);
-	exit (1);
+	exit(1);
 }
 
 int	ft_check(char **str)
@@ -42,6 +42,36 @@ int	ft_check(char **str)
 	return (1);
 }
 
+void	ft_push_b(t_list **a, t_list **b, char *str)
+{
+	t_list	*tmp;
+
+	if ((*a) != NULL)
+	{
+		tmp = *a;
+		*a = (*a)->next;
+		ft_lstadd_front(b, tmp);
+	}
+	if (str != NULL)
+	{
+		ft_putstr_fd(str, 1);
+		ft_putchar_fd('\n', 1);
+	}
+}
+
+void	ft_check_empty(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] != '\0' && str[i] == ' ')
+		i++;
+	if (str[i] == '\0')
+		ft_error();
+}
+
 char	*ft_joing_arg(char **av)
 {
 	char	*str;
@@ -56,36 +86,4 @@ char	*ft_joing_arg(char **av)
 		av++;
 	}
 	return (str);
-}
-
-int	ft_check_sort(int **nbr, int len)
-{
-	int	i;
-	int	check;
-
-	i = 0;
-	check = 0;
-	while (i < len && i + 1 < len)
-	{
-		if ((*nbr)[i] > (*nbr)[i + 1])
-		{
-			check = 1;
-			break ;
-		}
-		i++;
-	}
-	return (check);
-}
-
-void	ft_check_empty(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] != '\0' && str[i] == ' ')
-		i++;
-	if (str[i] == '\0')
-		ft_error();
 }

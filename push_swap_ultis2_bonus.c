@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_ultis3.c                                 :+:      :+:    :+:   */
+/*   push_swap_ultis2_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 14:46:00 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 09:41:56 by rlabbiz          ###   ########.fr       */
+/*   Created: 2023/03/19 10:34:15 by rlabbiz           #+#    #+#             */
+/*   Updated: 2023/03/19 11:31:57 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	ft_swap(t_list **head, char *str)
 {
@@ -41,31 +41,33 @@ void	ft_swap_all(t_list **a, t_list **b, char *str)
 	}
 }
 
-int	ft_get_index(t_list *stack, int value)
+long long	ft_atol(char *str)
 {
-	t_list	*lst;
-	int		index;
-
-	lst = stack;
-	index = 0;
-	while (lst != NULL && lst->content != value)
-	{
-		lst = lst->next;
-		index++;
-	}
-	return (index);
-}
-
-void	ft_free_args(char **str)
-{
-	int	i;
+	int			i;
+	long long	c;
+	long long	result;
 
 	i = 0;
-	while (str[i] != NULL)
+	c = 1;
+	result = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
 	{
-		free(str[i]);
+		c = -1;
 		i++;
 	}
+	if (ft_strlen(str + i) > 10)
+		ft_error();
+	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
+	{
+		result *= 10;
+		result += str[i] - 48;
+		i++;
+	}
+	return (result * c);
 }
 
 int	ft_check_int_range(char **str)
@@ -94,4 +96,16 @@ int	ft_check_int_range(char **str)
 		i++;
 	}
 	return (1);
+}
+
+void	ft_free_args(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		free(str[i]);
+		i++;
+	}
 }
