@@ -6,11 +6,11 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 11:36:58 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 11:37:05 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2024/05/14 19:23:48 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../includes/push_swap_bonus.h"
 
 void	ft_free_stack(t_list **a, t_list **b)
 {

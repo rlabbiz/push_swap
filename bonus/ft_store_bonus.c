@@ -6,11 +6,11 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 10:25:46 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 11:21:07 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2024/05/14 19:23:53 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../includes/push_swap_bonus.h"
 
 int	ft_check_sort(int **nbr, int len)
 {

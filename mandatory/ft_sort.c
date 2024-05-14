@@ -6,11 +6,11 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 13:15:06 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 13:36:13 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2024/05/14 19:24:32 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	ft_sort_s(t_list **a, t_list **b, t_sort *sort, int len)
 {

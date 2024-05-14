@@ -6,11 +6,11 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:45:58 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 11:22:04 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2024/05/14 19:24:38 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	ft_store_small(char **str, int **nbr, int i, int len)
 {

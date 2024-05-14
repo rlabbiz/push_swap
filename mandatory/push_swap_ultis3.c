@@ -6,11 +6,11 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:46:00 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 09:41:56 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2024/05/14 19:24:41 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_swap(t_list **head, char *str)
 {

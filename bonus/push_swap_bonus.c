@@ -6,11 +6,11 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 20:09:44 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 12:05:36 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2024/05/14 19:24:03 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../includes/push_swap_bonus.h"
 
 void	ft_check_if_sort(t_list **a, t_list **b)
 {
