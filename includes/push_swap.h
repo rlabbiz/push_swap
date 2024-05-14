@@ -6,14 +6,14 @@
 /*   By: rlabbiz <rlabbiz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 16:10:34 by rlabbiz           #+#    #+#             */
-/*   Updated: 2023/03/19 11:30:47 by rlabbiz          ###   ########.fr       */
+/*   Updated: 2024/05/14 19:25:01 by rlabbiz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <limits.h>
 
 typedef struct s_push
