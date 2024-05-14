@@ -1,13 +1,13 @@
-CC = CC 
+CC = cc 
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
-MAIN_FILE = push_swap.c
-DEPF = push_swap.h
-OBJECTS = ft_store.o push_swap_ultis1.o push_swap_ultis2.o push_swap_ultis3.o ft_sort.o free_stack.o
+MAIN_FILE = mandatory/push_swap.c
+DEPF = includes/push_swap.h
+OBJECTS = mandatory/ft_store.o mandatory/push_swap_ultis1.o mandatory/push_swap_ultis2.o mandatory/push_swap_ultis3.o mandatory/ft_sort.o mandatory/free_stack.o
 NAME_BONUS = checker
-MAIN_FILE_BONUS = push_swap_bonus.c
-DEPF_BONUS = push_swap_bonus.h
-OBJECTS_BONUS = push_swap_ultis_bonus.o get_next_line.o push_swap_ultis1_bonus.o ft_store_bonus.o push_swap_ultis2_bonus.o free_stack_bonus.o
+MAIN_FILE_BONUS = bonus/push_swap_bonus.c
+DEPF_BONUS = include/push_swap_bonus.h
+OBJECTS_BONUS = bonus/push_swap_ultis_bonus.o bonus/get_next_line.o bonus/push_swap_ultis1_bonus.o bonus/ft_store_bonus.o bonus/push_swap_ultis2_bonus.o bonus/free_stack_bonus.o
 LIBFT = libft/libft.a
 
 .PHONY : make clean re fclean
@@ -31,7 +31,7 @@ $(LIBFT) :
 	@make bonus -C libft
 
 clean : 
-	@rm -rf *.o
+	@rm -rf $(OBJECTS_BONUS) $(OBJECTS)
 	@make clean -C libft
 
 fclean : clean
